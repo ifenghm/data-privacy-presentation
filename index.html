@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How NOT to Dox Yourself</title>
         
-    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/preset-wind3.global.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/preset-web-fonts.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime@65.5.0/preset-wind.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime@65.5.0/preset-web-fonts.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime@65.5.0/preset-icons.global.js"></script>
+
+    
+    
     <script>
         window.__unocss = {
             theme: {
@@ -75,7 +79,12 @@
                 'link-fancy': 'text-accent3 font-bold no-underline decoration-accent3/30 decoration-2 underline-offset-4 hover:underline transition-all'
             },
             presets: [
-                () => window.__unocss_runtime.presets.presetWind3(),
+                () =>
+                  window.__unocss_runtime.presets.presetIcons({
+                    scale: 1.2,
+                    cdn: 'https://esm.sh/',
+                  }),
+                () => window.__unocss_runtime.presets.presetWind(),
                 () => window.__unocss_runtime.presets.presetWebFonts({
                     provider: 'google',
                     fonts: {
@@ -135,8 +144,7 @@
         }
 
         ::selection {
-            background: var(--un-colors-accent);
-            color: white;
+            background: #fca75a; 
         }
     </style>
 </head>
@@ -153,7 +161,7 @@
         <!-- Slide 0: Title -->
         <div class="slide slide-active" id="s0">
             <div class="font-mono text-[12px] text-muted tracking-[0.2em] uppercase mb-8 flex items-center gap-4 before:content-[''] before:inline-block before:w-[40px] before:h-[2px] before:bg-accent2 before:rounded-full">
-                Book Day 2025 · Data Privacy
+                Book Day 2026 · Data Privacy
             </div>
             <h1 class="heading-1">How NOT to<br><em class="italic text-accent">Dox</em> Yourself</h1>
             <p class="text-[1.2rem] text-text max-w-[600px] leading-[1.7] font-semibold mt-2">
@@ -219,13 +227,13 @@
         <!-- Slide 2: Book Tie-in -->
         <div class="slide" id="s2">
             <div class="section-label">Obligatory Book Tie-In</div>
-            <h2 class="heading-2">Measurement<br>is Power.</h2>
+            <h2 class="heading-2">Measurement is<br><span class="text-accent">Power.</span></h2>
             <p class="text-p">James Vincent's <strong>Beyond Measure</strong> is about our obsession with quantifying the world. It traces how humans have used measurement to make sense of the universe, but warns of the danger of <strong>reducing complex human experiences into mere data points</strong>.</p>
             <p class="text-p">Measurement is never neutral. Whoever controls what gets measured, and how, holds power over everyone else.</p>
             
             <div class="callout-yellow mt-6">
-                <h3 class="heading-3">The Ultimate Act of Measurement</h3>
-                <p class="m-0 text-text">Surveillance is the modern ultimate act of measurement. It is the process of taking a human being with complexities, flaws, and desires, and <strong>measuring them down to a spreadsheet of clickable behaviors</strong> to be categorized and sold to the highest bidder.</p>
+                <h3 class="heading-3">Measuring <s>Products</s> People </h3>
+                <p class="m-0 text-text">Surveillance is an inevitable outcome if we prioritize metrics and measurement to its extremes. Consenting to taking human beings with complexities, flaws, and desires, and <strong>measuring them down to a spreadsheet of clickable behaviors</strong> to be categorized and sold to the highest bidder creates data objects out of people.</p>
             </div>
         </div>
 
@@ -265,15 +273,18 @@
 
             <div class="three-col mt-8">
                 <div class="card border-t-4 border-t-accent3">
-                    <h3 class="heading-3">Privacy</h3>
+                    <div class="i-pixelarticons:eye text-accent2 justify-self-center"></div>
+                    <h3 class="heading-3 text-accent">Privacy</h3>
                     <p class="text-[1rem] text-text m-0 leading-[1.6]">Data is only seen by who you intend to see it. It is entirely about <strong>consent and control</strong>.</p>
                 </div>
                 <div class="card border-t-4 border-t-green">
+                    <div class="i-pixelarticons:lock text-accent2 justify-self-center"></div>
                     <h3 class="heading-3 text-green">Security</h3>
                     <p class="text-[1rem] text-text m-0 leading-[1.6]">You can trust the tools you’re using. Your data is protected against unauthorized access or breaches.</p>
                 </div>
                 <div class="card border-t-4 border-t-accent2">
-                    <h3 class="heading-3">Anonymity</h3>
+                    <div class="i-pixelarticons:users text-accent2 justify-self-center"></div>
+                    <h3 class="heading-3 text-red">Anonymity</h3>
                     <p class="text-[1rem] text-text m-0 leading-[1.6]">Acting without being identified. Completely disconnecting your digital actions from your real-world identity.</p>
                 </div>
             </div>
@@ -405,7 +416,7 @@
         <!-- Slide 10: Browser Tracking -->
         <div class="slide" id="s10">
             <div class="section-label">Section 08: Browser Tracking</div>
-            <h2 class="heading-2">The invisible<br>follow.</h2>
+            <h2 class="heading-2">The <span class="text-bg2">invisible</span><br>follow.</h2>
             <p class="text-p">People search is layer one. Layer two is the browser. Your activity across the entire web is tracked — not just on sites you use, but on sites you've never heard of.</p>
             
             <div class="two-col">
@@ -517,7 +528,8 @@
         <div class="slide" id="s13">
             <div class="section-label">Section 11: Security Failures</div>
             <h2 class="heading-2">And then<br>it gets stolen.</h2>
-            <p class="text-p">Even if you trusted every company handling your data — and you shouldn't — the massive hoards of data they collect are incredibly attractive targets. Breaches are a <strong>constant, ongoing feature</strong> of the system.</p>
+            <p class="text-p">Even if you trusted every company handling your data — and you shouldn't — the massive hoards of data they collect are incredibly attractive targets. Breaches are a <strong>constant, ongoing feature</strong> of the system. 
+            You can view <a href="https://haveibeenpwned.com" class="text-accent hover:underline">haveibeenpwned.com</a> to check if your data has been compromised.</p>
             
             <div class="scroll-content overflow-y-auto max-h-[calc(100vh-250px)] pr-4">
                 <div class="card mt-4 p-0 overflow-hidden">
